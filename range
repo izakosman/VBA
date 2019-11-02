@@ -1,0 +1,21 @@
+Sub drugie_polecemoe_RANGE()
+Range("A1").Value = 10
+Range("D1").Value = 10
+'czyli excel ma wstawic 10 do komorki A1'
+Range("B2").Value = 222
+Range("C5").Value = "aaa"
+'dla zasiegu komorek bedzie nastepujaco:'
+Range("A1:B1").Value = 20
+'od a1 do np c3 wypelnij dana wartoscia'
+'usuniecie z komorki zawartosci wraz z formatowaniem:"
+Range("A1").Clear
+'usuniecie z komorki bez formatowania:'
+Range("A2").ClearContents
+Range("A1:A5").Clear
+Range("D1").Copy Range("d2:d4")
+Range("d1:d5").Copy Range("e3")
+'skopiowanie wierszy z kolumny a do b'
+'mozna wstawic do innych unkcji'
+MsgBox Range("d1").Value
+End Sub
+
