@@ -1,0 +1,19 @@
+Sub polecenie_trzecie():
+'chcemy procedure ktora bedzie zaznaczala inny arkusz, niz ten otwarty'
+'Worksheets("arkusz2").Activate'
+'zamiast arkusz 2 moze byc worksheets(2)'
+'dodaje arkusz w pliku'
+'Sheets.Add After:=Worksheets(1)'
+'Worksheets("arkusz4").Delete'
+'zmiana nazwy arkusza:'
+'Worksheets("Arkusz1").Name = "arkusz pierwszy"'
+'otwieranie innego pliku excela:'
+'Workbooks.Open ("C:\Users\izako\Desktop\VBA\VBA polecenie range.xlsm")'
+'zamykanie pliku:'
+'Workbooks("VBA polecenie range.xlsm").Close'
+'chcemy zapsiac otwart plik:'
+'Workbooks("Zeszyt1.xlsm").SaveAs Filename:="aaaaa"'
+'nowy plik excela:'
+Workbooks.Add
+
+End Sub
