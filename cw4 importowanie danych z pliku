@@ -1,0 +1,31 @@
+Sub czwarta_procedura()
+'tworzymy zmienna string z pliku np tabela w txt:'
+    Dim plik As String
+    
+    'podajemy sciezke do pliku:'
+    plik = "C:\Users\izako\Desktop\VBA\pliktekstowy1.txt"
+    
+    'otworz plik importuj(input do excela output do txt ) as numer pliku ( z gory sobie samemu przydzielasz )'
+    Open plik For Input As #1
+    numer_wiersza = 0
+    
+    'tworzymy petle ktora bedzie sie wykonywala az do eof czyli end of file nazwazmiennej :':
+    
+    Do Until EOF(1)
+    'alzy pamietaz o zaznaczeniu komorki w arkuszu od ktorej ma byc przepisywany plik'
+    '(1) wskazuje na numer pliku czyli u nie plik'
+        Line Input #1, LineFromFile
+        ' czyli odwolujemy sie do pliku 1 , LFF tzn ze wczytujesz tylko pierwsza linie'
+        Slowo = Split(LineFromFile, ",")
+        ActiveCell.Offset(numer_wiersza, 0).NumberFormat = "@"
+        'czyli przerabiamy aktualnie przepisywana komorke na romat tekstowy'
+        'splitem wskazujesz separator ,'
+        ActiveCell.Offset(numer_wiersza, 0).Value = Slowo(2) 'do A1 wstawia 2 slowo z linijki'
+        ActiveCell.Offset(numer_wiersza, 1).Value = Slowo(1)
+        ActiveCell.Offset(numer_wiersza, 2).Value = Slowo(0)
+        numer_wiersza = numer_wiersza + 1
+        'chodzi o to ze +1 kiedy skonczy sie petla'
+    Loop
+    Close #1 'zaykamy plik nr 1'
+    
+End Sub
